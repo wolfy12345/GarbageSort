@@ -1,0 +1,377 @@
+page {
+  background-image: url("https://6465-dev-oto5o-1257020492.tcb.qcloud.la/index_bg.jpg");
+  /* background-size: cover; */
+  background-size: 100% 100%;
+}
+
+#header {
+    position: fixed;
+    left: 0rpx;
+    top: 0rpx;
+    width: 100%;
+    height: 180rpx;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
+    z-index: 999;
+}
+
+#currentCity {
+    position: absolute;
+    left: 25rpx;
+    top: 20rpx;
+    height: 80rpx;
+}
+
+#location {
+    margin: 24rpx 0rpx 0rpx 0rpx;
+    width: 24rpx;
+    height: 32rpx;
+}
+
+#city {
+    margin: 0rpx 0rpx 0rpx 10rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 80rpx;
+}
+
+#fakeSearch {
+    position: absolute;
+    left: 140rpx;
+    top: 20rpx;
+    right: 25rpx;
+    padding: 0px 72rpx 0px 76rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+#magnifier {
+    position: absolute;
+    left: 25rpx;
+    top: 24rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+#fakeSearch text {
+    color: #808080;
+    font-size: 32rpx;
+    line-height: 80rpx;
+}
+
+#broadcast {
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+    width: 100%;
+    height: 60rpx;
+    background-color: rgba(250,189,38,0.1);
+    overflow: hidden;
+}
+
+#broadcast text {
+    display: block;
+    color: #8e6b15;
+    font-size: 26rpx;
+    line-height: 60rpx;
+    white-space: nowrap;
+    animation: broadcast 18000ms linear infinite;
+}
+
+#overlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1800;
+}
+
+#chooseCity {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 600rpx;
+    height: 800rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    transform: translate(-50%,-50%);
+    z-index: 1801;
+}
+
+#chooseCityCurrent {
+    height: 100rpx;
+}
+
+#chooseCityCurrent image {
+    margin-left: 30rpx;
+    margin-top: 35rpx;
+    width: 23rpx;
+    height: 30rpx;
+}
+
+#chooseCityCurrent text {
+    margin-left: 15rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 100rpx;
+}
+
+#cities {
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    height: 670rpx;
+    box-sizing: border-box;
+}
+
+.setting-item {
+    position: relative;
+    padding-left: 1em;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+    font-size: 30rpx;
+    line-height: 3em;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.checked::after {
+    content: "";
+    position: absolute;
+    right: 35rpx;
+    top: 32rpx;
+    width: 30rpx;
+    height: 15rpx;
+    border-left: 2px solid #fabd26;
+    border-bottom: 2px solid #fabd26;
+    transform: rotate(-45deg);
+}
+
+@-webkit-keyframes broadcast {
+    0% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: -30em;
+    }
+}
+
+@keyframes broadcast {
+    0% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: -30em;
+    }
+}
+
+
+
+.bg-darkGray {
+	background-color:  #f6f6f6;
+	color:#ffffff;
+}
+.cu-bar .search-form {
+  background-color:  #ffffff;
+}
+.cu-bar .search-form input{
+  height: 100rpx;
+}
+.cu-bar .search-form{
+  height: 90rpx;
+}
+.cu-bar{
+  margin-top: 300rpx;
+}
+.ai-view{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 250rpx;
+}
+.txt{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #00cc77;
+}
+.tip{
+  font-size: 22rpx;
+  color: #00cc77;
+  margin-top: 20rpx;
+}
+.ai-paizhao{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 80rpx;
+}
+.float-view{
+  position:absolute;
+  z-index:9;
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 50rpx;
+  margin-bottom: 50rpx;
+}
+
+.box {
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 600rpx;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  margin-right: 120rpx;
+  border-width: 20rpx;
+  border-style: solid;
+  border-color:  transparent transparent #00cc77 transparent;
+}
+.body {
+  background-color: #00cc77;
+  box-shadow: 0 10rpx 20rpx -10rpx #00cc77;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  padding: 0 20rpx;
+  margin-right: 40rpx;
+}
+.body > text {
+  color: #FFF;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.share,.cs {
+    position: fixed;
+    right: 20rpx;
+    bottom: 100rpx;
+    width: 150rpx;
+    height: 60rpx;
+    border-top-left-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    border-bottom-right-radius: 30rpx;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.1);
+    z-index: 1501;
+}
+.cs {
+    bottom: 20rpx;
+}
+.share.index {
+    top: 220rpx;
+}
+.cs.index {
+    top: 290rpx;
+}
+.share::after,.cs::after {
+    border: none;
+}
+.share image,.cs image {
+    position: absolute;
+    left: 25rpx;
+    top: 15rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.share text,.cs text {
+    position: absolute;
+    left: 65rpx;
+    top: 0rpx;
+    line-height: 60rpx;
+    color: #333333;
+    font-size: 28rpx;
+}
+
+#qrDownloadOverlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2002;
+}
+
+#qrDownloadWrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 600rpx;
+    height: 775rpx;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transform: translate(-50%,-50%);
+    z-index: 2003;
+    animation: pop 250ms;
+}
+
+#qrDownloadWrapper>image {
+    display: block;
+    margin-left: 75rpx;
+    margin-top: 75rpx;
+    width: 450rpx;
+    height: 450rpx;
+}
+
+#qrDownloadWrapper button {
+    margin-left: 75rpx;
+    margin-top: 75rpx;
+    width: 450rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+    background-color: #64a814;
+    color: #ffffff;
+    font-size: 32rpx;
+    line-height: 100rpx;
+}
+
+#qrDownloadWrapper button::after {
+    border: none;
+}
+
+#hideQr {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+#hideQr::before,#hideQr::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40rpx;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-color: #cccccc;
+}
+
+#hideQr::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+#hideQr::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}

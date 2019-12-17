@@ -1,0 +1,45 @@
+<view id="searchWrapper">
+    <input confirm-type="search" focus="{{true}}" bindconfirm="searchIcon" id="search" placeholder="搜索垃圾查看对应分类" type="text"></input>
+    <image id="magnifier" src="../../images/tab_bar_icon_magnifier.png"></image>
+    <view bindtap="clearSearchText" id="clearSearchText" style="display: {{searchText.length>0?'block':'none'}};"></view>
+    <text bindtap="cancelSearch" id="cancelSearch">取消</text>
+</view>
+
+<block wx:if="{{isHasData}}">
+<view id="listView">
+  <view class="filter-view" wx:for="{{datas}}" wx:key 
+  bindtap="onItemClick" data-index="{{item.sortId}}">
+    <view class="item-view item-o bg-white"  wx:if="{{index%2==0}}">
+      <image class="img" 
+      src="{{config.cats[config.cities[city].cats[map[item.sortId]]].imageSrc}}"></image>
+      <text  >{{item.name}}「 {{config.cats[config.cities[city].cats[map[item.sortId]]].name}} 」</text>
+    </view>
+    <view class="item-view item-ji bg-grey" wx:else>
+      <image class="img" 
+      src="{{config.cats[config.cities[city].cats[map[item.sortId]]].imageSrc}}"></image>
+      <text  >{{item.name}}「 {{config.cats[config.cities[city].cats[map[item.sortId]]].name}} 」</text>
+    </view>
+  </view>
+</view>
+</block>
+<block wx:else>
+<view class="no-view" >
+  <image class="no-img" src="/images/no-result.png"></image>
+  <text class="content">未找到相关内容</text>
+  <view class="btn-view">
+    <view class="btn-commit" bindtap="onGoHome"> 回首页</view>
+    <view class="btn-commit" bindtap="commit"> 去提交</view>
+  </view>
+</view>
+</block>
+
+<view class="cu-modal {{isShow?'show':''}}"  bindtap="hideModal">
+  <view class="cu-dialog"  bindtap="hideModal">
+  <image class="bg-img" src="{{logo}}"></image>
+  </view>
+</view>
+
+<button class="share index" openType="share" style="display: block;">
+    <image src="/images/share.png"></image>
+    <text>分享</text>
+</button>

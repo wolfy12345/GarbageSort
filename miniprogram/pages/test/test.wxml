@@ -1,0 +1,53 @@
+<canvas canvasId="mc" id="c"></canvas>
+<view id="wrapper">
+    <view id="quizzes">
+        <view class="quiz{{currentQ===quizIndex?' active':currentQ>quizIndex?' out':' in'}}" wx:for="{{quizzes}}" wx:for-index="quizIndex" wx:for-item="quiz">
+            <view class="quiz-index" style="margin-top:10px;">{{quizIndex<9?'0'+(quizIndex+1):quizIndex+1}} <text>/ {{totalQuizzes}}</text>
+            </view>
+            <text class="quiz-q" src="{{quiz.q}}">{{quiz.n}}</text>
+            <view class="quiz-options">
+                <view bindtap="select" class="quiz-option" data-option-index="{{catIndex}}" data-quiz-index="{{quizIndex}}" style="{{answers[quizIndex]===catIndex?' border: 1px solid rgba('+config.cats[ config.cities[city].cats[catIndex] ].color.r+', '+config.cats[ config.cities[city].cats[catIndex] ].color.g+', '+config.cats[ config.cities[city].cats[catIndex] ].color.b+', 0.5);background-color: rgba('+config.cats[ config.cities[city].cats[catIndex] ].color.r+', '+config.cats[ config.cities[city].cats[catIndex] ].color.g+', '+config.cats[ config.cities[city].cats[catIndex] ].color.b+', 0.05);':''}}" wx:for="cats" wx:for-index="catIndex" wx:for-item="cat">
+                    <text>{{config.cats[ config.cities[city].cats[catIndex] ].name}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="{{currentQ>totalQuizzes-1?'in':''}}" id="quizResultWrapper">
+            <view id="quizResult">
+                <view id="resultSheet">
+                    <view id="resultSheetHeader">
+                        <image id="testTitle" mode="widthFix" src="{{images.testTitle}}"></image>
+                        <text id="score">{{score}}{{tipInfo.points}}</text>
+                    </view>
+                    <view id="resultDetail">
+                        <view id="resultDetailHeader">
+                            <view class="result-quiz-name" id="resultDetailHeaderName">{{tipInfo.title}}</view>
+                            <view class="result-my-answer" id="resultDetailHeaderMyAnswer">{{tipInfo.myAnswer}}</view>
+                            <view class="result-right-answer" id="resultDetailHeaderRightAnswer">{{tipInfo.rightAnswer}}</view>
+                        </view>
+                        <view class="result-row" wx:for="{{answers}}" wx:for-item="answer">
+                            <view class="result-dot" style="color: rgb({{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.r}}, {{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.g}}, {{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.b}});background-color: rgba({{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.r}}, {{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.g}}, {{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].color.b}}, 0.1);">{{index+1}}</view>
+                            <view class="result-quiz-name">{{quizzes[index].n}}</view>
+                            <view class="result-my-answer{{answer===quizzes[index].c-1?'':' result-my-answer-wrong'}}">{{config.cats[ config.cities[city].cats[answer] ].name}}</view>
+                            <view class="result-right-answer">{{config.cats[ config.cities[city].cats[quizzes[index].c-1] ].name}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view id="actions">
+                    <view bindtap="restart" id="restartTest">
+                        <image src="{{images.restart}}"></image>
+                        <text>{{tipInfo.testAgain}}</text>
+                    </view>
+                    <button bindtap="share" id="testFriends" openType="share">
+                        <image src="{{images.share}}"></image>
+                        <text>{{tipInfo.testFriends}}</text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view id="testBottom">
+        <view id="adWrapper">
+            <ad bindclose="closeAd" binderror="withoutAd" bindload="withAd" unitId="adunit-7e79fb8e9ceabea0"></ad>
+        </view>
+    </view>
+</view>

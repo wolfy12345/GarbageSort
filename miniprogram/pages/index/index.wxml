@@ -1,0 +1,31 @@
+<view id="header">
+    <view bindtap="switchSection" class="cat{{secId==index?' active':''}}" id="cat{{index}}" wx:for="{{config.cities[city].cats}}" wx:for-item="cat">
+        <view class="cat-bg" style="background-color: rgba({{config.cats[cat].color.r}}, {{config.cats[cat].color.g}}, {{config.cats[cat].color.b}}, 1);"></view>
+        <text>{{config.cats[cat].name}}</text>
+    </view>
+</view>
+<view class="list-wrapper">
+    <scroll-view scroll-top="{{scrollTop}}" bindscrolltolower="loadMoreItems" class="list" enableBackToTop="true" scrollWithAnimation="true" scrollY="{{enableScroll}}" lower-threshold="20">
+        <view class="section" id="section{{secId}}">
+            <view class="cat-intro-wrapper" style="background-color: rgba({{config.cats[ config.cities[city].cats[secId] ].color.r}}, {{config.cats[ config.cities[city].cats[secId] ].color.g}}, {{config.cats[ config.cities[city].cats[secId] ].color.b}}, 0.1);">
+                <image class="section-icon" src="{{config.cats[ config.cities[city].cats[secId] ].imageSrc}}"></image>
+                <view class="cat-intro">
+                    <view class="cat-description">
+                        <text class="b">{{config.cats[ config.cities[city].cats[secId] ].name}}</text> {{config.cats[ config.cities[city].cats[secId] ].intro}}</view>
+                    <text class="throw-tips-title">{{tipInfo.throwingRequirements}}</text>
+                    <text class="throw-tip" wx:for="{{config.cats[ config.cities[city].cats[secId] ].requirements}}">{{item}}</text>
+                </view>
+            </view>
+            <view class="item" data-cat-index="{{secId}}" data-item-name="{{item.name}}" hoverClass="item-hover" wx:for="{{data}}" wx:for-index="itemIndex">{{item.name}}</view>
+        </view>
+    </scroll-view>
+</view>
+
+<button class="share index" openType="share" style="display: block;">
+    <image src="/images/share.png"></image>
+    <text>分享</text>
+</button>
+<button class="cs index" bindtap="showZsm">
+    <image src="/images/qr_b.png"></image>
+    <text>打赏</text>
+</button>
