@@ -1,7 +1,7 @@
 # 垃圾分类小程序
 
 ## 扫码体验一下先
-![垃圾分类智能工具](https://6465-dev-oto5o-1257020492.tcb.qcloud.la/wxacode_default_openapi_page.jpeg?sign=901c407c1e0b4efeffc610e5689c2866&t=1575638854)
+![QIeTf0.jpg](https://s2.ax1x.com/2019/12/17/QIeTf0.jpg)
 
 ## 该项目是在一个大佬开源的小程序基础上进行的修改，原项目地址：https://github.com/qi19901212/Garbage
 ## 做了如下修改：
